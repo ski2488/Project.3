@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Interactive Checkbox Filter Example</title>
+  </head>
+  <body>
+    <div id="checkboxContainer"></div>
+    <table id="myTable">
+      <thead>
+        <tr>
+          <th>Rental </th>
+          <th>Filters</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+    <script>
+      // Load the CSV data using D3.js
+      d3.csv("rented_grouped.csv", function(error, data) {
+        if (error) throw error;
+      
+        // Define the categories array
+        var categories = ["region", "listings", "price_mean", "price_median", "sq_ft_mean", "price_per_sqfeet", "beds_mean", "baths_mean", "Avg Annual Rainfall", "Violent Crime Rate", "U.S. News Overall Score", "Data Scientist Job Postings"];
+      
+        // Create the checkbox elements dynamically
+        var checkboxContainer = document.getElementById("checkboxContainer");
+        categories.forEach(function(category) {
+          var label = document.createElement("label");
+          label.textContent = category + ":";
+          var checkbox = document.createElement("input");
+          checkbox.type = "checkbox";
+          checkbox.name = "category";
+          checkbox.value = category;
+          checkbox.addEventListener("change", updateTable);
+          label.appendChild(checkbox);
+          checkboxContainer.appendChild(label);
+        });
+      
+        // Initialize the visible items array
+        var visibleItems = data.slice();
+      
+        // Get the table body element
+        var tableBody = document.getElementById("tableBody");
+      
+        // Define the updateTable function
+        function updateTable() {
+          // Update the visible items based on the checked checkboxes
+          var checkedCategories = Array.from(document.querySelectorAll('input[name="category"]:checked')).map(function(checkbox) {
+            return checkbox.value;
+          });
+          if (checkedCategories.length > 0) {
+            visibleItems = data.filter(function(item) {
+              return checkedCategories.indexOf(item.category) !== -1;
+            });
+          } else {
+            visibleItems = data.slice();
+          }
+          
+          // Update the table with the visible items
+          tableBody.innerHTML = "";
+          visibleItems.forEach(function(item) {
+            var row = document.createElement("tr");
+            var nameCell = document.createElement("td");
+            nameCell.textContent = item.name;
+            row.appendChild(nameCell);
+            var categoryCell = document.createElement("td");
+            categoryCell.textContent = item.category;
+            row.appendChild(categoryCell);
+            tableBody.appendChild(row);
+          });
+        }
+        
+        // Call the updateTable function to initialize the table
+        updateTable();
+      });
+    </script>
+  </body>
+</html>
