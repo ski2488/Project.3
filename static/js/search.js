@@ -1,9 +1,10 @@
 //Pets Dropdown Menu Functionality
+let petsAllowed = '';
 d3.selectAll("#petsAllowed").on("change", log);
 function log() {
     let dropdownMenu = d3.select("#petsAllowed");
-    let petsAllowed = dropdownMenu.property("value");
-    console.log(petsAllowed);
+    petsAllowed = dropdownMenu.property("value");
+    //console.log(petsAllowed);
 }
 
 // City Checkboxes Functionality
@@ -19,7 +20,7 @@ d3.selectAll(".cities").on("change", function () {
         const index = cities.indexOf(this.name);
         cities.splice(index, 1);
     }
-    console.log(cities);
+    //console.log(cities);
 });
 // Price Range Sliders Functionality
 // Select sliders
@@ -50,6 +51,7 @@ maxSlider.oninput = function () {
     maxOutput.innerHTML = this.value;
 }
 
+
 // Creating the map object, centered on center of US
 var myMap = L.map("map", {
     center: [37.09, -95.71],
@@ -60,6 +62,14 @@ var myMap = L.map("map", {
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(myMap);
+
+// Output search variables
+function updateSearch() {
+    console.log(`petsAllowed: ${petsAllowed}`);
+    console.log(`cityList: ${cities}`);
+    console.log(`Minimum Price: ${minOutput.innerHTML}`);
+    console.log(`Maximum Price: ${maxOutput.innerHTML}`);
+}
 
 // SQL Query once database has been setup and connected
 //
