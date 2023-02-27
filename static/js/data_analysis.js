@@ -1,9 +1,9 @@
 
 const cityStats = {
-    "CITY": "img/Log Price.png", // CITY
-    "CAPITA": "img/", // CAPITA
-    "WEATHER": "img/", // WEATHER
-    "CRIME": "img/l", // CRIME
+    "CITY": "../img/Log Price.png", // CITY
+    "CAPITA": "../img/", // CAPITA
+    "WEATHER": "../img/", // WEATHER
+    "CRIME": "../img/", // CRIME
 };
 
 function updatecityStat() {
