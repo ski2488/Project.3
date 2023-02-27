@@ -5,16 +5,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Project 3</title>
+  <title>USA Housing Listing Rentals</title>
   <script src="https://d3js.org/d3.v5.min.js"></script>
 
 </head>
 
 <body>
   <h1>USA Housing Listing Rentals</h1>
-  <div class="text1">Proposal The aim of our project is to uncover patterns in the 12 of the top largest cities by population to uncover correlations between rental prices to income. We will examine relationships > between city population and income capita, income capita to rental prices, rental prices to city population > over a snapshot of the year 2020.
-    
-   <div class="text2">Hypothesis:
+  <h2> Proposal The aim of our project is to uncover patterns in the 12 of the top largest cities by population to uncover correlations between rental prices to income. We will examine relationships > between city population and 
+    income capita, income capita to rental prices, rental prices to city population > over a snapshot of the year 2020.</h2>
+  <h3>Hypothesis</h3> 
     </div>
     Between city population and income capita -> Larger the city, income capita will be more.
     Income capita to rental prices -> If the income of the population is high, then the rental prices will also be higher.
@@ -29,22 +29,41 @@
     <li>Income_data.xlsx</li>
   </ul>
     
-    
-    
-  <div class="my-link">
+  <div class="project-link">
     <a href="https://github.com/ski2488/Project.3.git">GitHub Repo</a>
   </div>
 
   <div class="deeplink">
-    <div class="outer">
-      <div class="inner">
-        <a href="https://www.kaggle.com/datasets/austinreese/usa-housing-listings">Data Source 1</a>
-      </div>
-    </div>
+    <a href="https://www.kaggle.com/datasets/austinreese/usa-housing-listings">Data Source 1</a>
+  </div>
+  </div>
+    <select name="city" id="citySelector">
+    <option value="CITY">CITY</option>
+    <option value="CAPITA">CAPITA</option>
+    <option value="WEATHER">WEATHER</option>
+    <option value="CRIME">CRIME</option>
+    </select>
+    <input type="submit" onclick="updatecityStat()">
+
   </div>
 
-  
-</body>
-<script src="static/js/index.js"></script>
 
+
+  <script src="project_3.js"></script>
+  <img src="img/Log Price.png">
+  <img src="img/Price per Sqft vs Avg Annual Rainfall.png">
+  <img src="img/Price per Sqft vs Density.png">
+  <img src="img/Price per Sqft vs Highest Monthly Avg High Temp.png">
+  <img src="img/Price per Sqft vs Listings per 1k Capita.png">
+  <img src="img/Price per Sqft vs Lowest Monthly Avg High Temp.png">
+  <img src="img/Price per Sqft vs Price per Sqft vs % Water.png">
+  <img src="img/Price per Sqft vs Per_Capita_Income_2020.png">
+  <img src="img/Price per Sqft vs Property Crime Rate.png">
+  <img src="img/Price per Sqft vs U.S. News Overall Score.png">
+  <img src="img/Price per Sqft vs Violent Crime Rate.png">
+  <img src="img/Price per sqft.png">
+  
+
+
+</body>
 </html>
