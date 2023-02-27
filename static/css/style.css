@@ -27,3 +27,20 @@
     background: #04AA6D;
     cursor: pointer;
 }
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+#map,
+body,
+html {
+    height: 90%;
+    width: 100%
+}
+
+textarea {
+    width: 600px;
+    height: 150px;
+}
