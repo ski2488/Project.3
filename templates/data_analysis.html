@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>USA Housing Listings - Rentals - Analysis</title>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+
+</head>
+
+<body>
+  <h2>Data Analysis Graphs (select graph category):</h2>
+  <div>
+  <!-- Dropdown to select desired group of graphs -->
+  <select id="dataSelector">
+    <option>-------</option>
+    <option value="CITY">CITY</option>
+    <option value="CAPITA">CAPITA</option>
+    <option value="WEATHER">WEATHER</option>
+    <option value="CRIME">CRIME</option>
+    <option value="ALL">ALL</option>
+  </select>
+  <input type="submit" onclick="updateGraphs()">
+  </div>
+
+  <!-- JavaScript to change displayed graphs -->
+  <script src="/js/data_analysis.js"></script>
+
+  <!-- Div containing selected group of graphs -->
+  <div id="graphs"></div>
+  <br>
+
+  <!-- Back button -->
+  <div>
+    <a href="http://localhost:5000">Back</a>
+  </div>
+
+
+</body>
+</html>
